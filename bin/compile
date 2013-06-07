@@ -86,3 +86,7 @@ EOF
 chmod 755 $HOME/bin/im_env.sh
 
 echo "Wrote $HOME/bin/im_env.sh"
+
+echo $lib_dir > /etc/ld.so.conf.d/imagemagick.conf
+
+echo "Added to ldconfig"
