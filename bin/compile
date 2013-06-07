@@ -81,4 +81,4 @@ EOF
 
 chmod 755 $HOME/bin/im_env.sh
 
-echo 'Wrote $HOME/bin/im_env.sh'
+echo "Wrote $HOME/bin/im_env.sh"
