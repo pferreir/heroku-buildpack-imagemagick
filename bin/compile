@@ -70,9 +70,12 @@ echo "Installation completed" | indent
 
 echo "Building runtime environment for imagemagick" | arrow
 mkdir -p $BUILD_DIR/.profile.d
-echo "export PATH=\"\$HOME/bin:\$PATH\"" > $BUILD_DIR/.profile.d/imagemagick.sh
-echo "export LD_LIBRARY_PATH=\"$lib_path:\$LD_RUN_PATH\"" >> $BUILD_DIR/.profile.d/imagemagick.sh
-echo "export IMAGEMAGICK_ROOT=\"$BUILD_DIR/vendor/imagemagick\"" >> $BUILD_DIR/.profile.d/imagemagick.sh
+
+cat > $HOME/.profile.d/imagemagick.sh <<EOF
+export PATH="$HOME/bin:$PATH"
+export LD_LIBRARY_PATH="$lib_path:$LD_RUN_PATH"
+export IMAGEMAGICK_ROOT="$BUILD_DIR/vendor/imagemagick"
+EOF
 
 cat > $HOME/bin/im_env.sh <<EOF
 #!/bin/sh
