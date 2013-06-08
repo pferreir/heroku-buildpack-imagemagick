@@ -78,11 +78,9 @@ export LD_RUN_PATH="$lib_path:$LD_RUN_PATH"
 export IMAGEMAGICK_ROOT="$BUILD_DIR/vendor/imagemagick"
 EOF
 
-cat > $HOME/bin/im_env.sh <<EOF
-#!/bin/sh
-echo "$BUILD_DIR/vendor/imagemagick"
-EOF
 
-chmod 755 $HOME/bin/im_env.sh
+export PKG_CONFIG_PATH="$lib_dir/pkgconfig/:$PKG_CONFIG_PATH"
 
-echo "Wrote $HOME/bin/im_env.sh"
+echo $PKG_CONFIG_PATH
+pkg-config ImageMagick --ldflags --libs
+pkg-config ImageMagick-Q16 --cflags
