@@ -76,11 +76,5 @@ export PATH="$HOME/bin:$PATH"
 export LD_LIBRARY_PATH="$lib_path:$LD_LIBRARY_PATH"
 export LD_RUN_PATH="$lib_path:$LD_RUN_PATH"
 export IMAGEMAGICK_ROOT="$BUILD_DIR/vendor/imagemagick"
-EOF
-
-
 export PKG_CONFIG_PATH="$lib_path/pkgconfig/:$PKG_CONFIG_PATH"
-
-echo $PKG_CONFIG_PATH
-pkg-config ImageMagick --libs
-pkg-config ImageMagick-Q16 --cflags
+EOF
