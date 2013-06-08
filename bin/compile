@@ -78,3 +78,5 @@ export LD_RUN_PATH="$lib_path:$LD_RUN_PATH"
 export IMAGEMAGICK_ROOT="$BUILD_DIR/vendor/imagemagick"
 export PKG_CONFIG_PATH="$lib_path/pkgconfig/:$PKG_CONFIG_PATH"
 EOF
+
+export PKG_CONFIG_PATH="$lib_path/pkgconfig/:$PKG_CONFIG_PATH"
